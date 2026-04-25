@@ -1,0 +1,74 @@
+{
+  "source_shape": [
+    96,
+    96,
+    96
+  ],
+  "target_shape": [
+    128,
+    128,
+    128
+  ],
+  "source_max_trials": 24,
+  "target_max_trials": 8,
+  "num_trials_per_iter": 4,
+  "cost_model": "xgb",
+  "transfer_top_k": 3,
+  "transfer_min_similarity": 0.1,
+  "transfer_warmstart_limit": 1,
+  "transfer_enable_max_trials": 0,
+  "mcts_max_children_per_node": 4,
+  "mcts_expansion_candidates": 4,
+  "mcts_use_measured_feedback": true,
+  "seeds": [
+    0,
+    1,
+    2,
+    3
+  ],
+  "unoptimized_run_sec": 0.0019292759,
+  "trial_results": [
+    {
+      "seed": 0,
+      "baseline_best_run_sec": 1.574338966747746e-05,
+      "transfer_best_run_sec": 1.364588661090238e-05,
+      "baseline_compiled_run_sec": 1.5792600000000002e-05,
+      "transfer_compiled_run_sec": 1.83383e-05,
+      "measured_improvement": 1.153709547527625,
+      "compiled_improvement": 0.8611812436267267
+    },
+    {
+      "seed": 1,
+      "baseline_best_run_sec": 1.6163363397936337e-05,
+      "transfer_best_run_sec": 1.4229518455977086e-05,
+      "baseline_compiled_run_sec": 1.9398299999999997e-05,
+      "transfer_compiled_run_sec": 1.60191e-05,
+      "measured_improvement": 1.1359037516232282,
+      "compiled_improvement": 1.2109481806093974
+    },
+    {
+      "seed": 2,
+      "baseline_best_run_sec": 2.0554321963572875e-05,
+      "transfer_best_run_sec": 1.8928549252450466e-05,
+      "baseline_compiled_run_sec": 2.6025799999999997e-05,
+      "transfer_compiled_run_sec": 1.91018e-05,
+      "measured_improvement": 1.085889979704173,
+      "compiled_improvement": 1.3624789286873487
+    },
+    {
+      "seed": 3,
+      "baseline_best_run_sec": 1.4023063158674631e-05,
+      "transfer_best_run_sec": 1.4147013644105755e-05,
+      "baseline_compiled_run_sec": 1.69658e-05,
+      "transfer_compiled_run_sec": 1.4235700000000002e-05,
+      "measured_improvement": 0.9912383992445808,
+      "compiled_improvement": 1.1917784162352394
+    }
+  ],
+  "summary": {
+    "avg_measured_improvement": 1.0916854195249017,
+    "avg_compiled_improvement": 1.156596692289678,
+    "median_measured_improvement": 1.1108968656637006,
+    "median_compiled_improvement": 1.2013632984223184
+  }
+}

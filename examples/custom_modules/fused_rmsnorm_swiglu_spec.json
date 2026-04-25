@@ -1,0 +1,22 @@
+{
+  "modules": [
+    {
+      "name": "fused_rmsnorm_swiglu_cuda",
+      "target_kinds": ["cuda", "cuda-tensorcore"],
+      "match_keywords": ["rmsnorm", "swiglu", "silu", "gate"],
+      "match_mode": "any",
+      "prompt_context": "This module is a fused normalization and gated activation kernel that is not covered by cuBLAS/cuDNN. It is usually memory-bandwidth limited and benefits from reducing global-memory traffic, keeping row reductions within a CTA, and using vectorized contiguous loads/stores when alignment allows.",
+      "schedule_hints": [
+        "Prefer thread binding and tiling choices that keep each row or token block within a cooperative thread group.",
+        "Prioritize vectorized loads/stores for the contiguous hidden dimension.",
+        "Avoid transformations that split the reduction so aggressively that they increase global-memory round trips."
+      ],
+      "mutator_prior_by_category": {
+        "thread_binding": 0.55,
+        "tile_size": 0.35,
+        "parallel": 0.25,
+        "unroll": 0.15
+      }
+    }
+  ]
+}
