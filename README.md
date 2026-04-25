@@ -4,7 +4,7 @@
 
 This repository extends the Reasoning Compiler prototype with adaptive transfer-memory guidance for low-budget CPU matmul tuning, achieving **1.188x average compiled runtime speedup** across five transfer cases.
 
-This project is built on top of [Reasoning Compiler (NeurIPS 2025)](https://openreview.net/forum?id=2D4TuZyNnr), a MCTS-based compiler optimization framework.
+[Reasoning Compiler (NeurIPS 2025)](https://openreview.net/forum?id=2D4TuZyNnr) treats compiler optimization as a sequential decision-making problem: it uses MCTS-style search, guided by LLM-generated optimization advice, to select transformation sequences over TVM MetaSchedule. This project builds on that framework by adding adaptive transfer memory to its search loop.
 
 ## Motivation
 
